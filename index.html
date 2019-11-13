@@ -16,7 +16,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -103,33 +103,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 51px;
+  padding-top: 66px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 71px;
+  margin-top: -71px;
 }
 .section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 71px;
+  margin-top: -71px;
 }
 .section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 71px;
+  margin-top: -71px;
 }
 .section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 71px;
+  margin-top: -71px;
 }
 .section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 71px;
+  margin-top: -71px;
 }
 .section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 71px;
+  margin-top: -71px;
 }
 .dropdown-submenu {
   position: relative;
@@ -304,6 +304,7 @@ $(document).ready(function () {
 <li>Verodere die Konjunktionsterme (d.h. du hast so viele Konjunktionsterme verordert wie es 1-er Zeilen gibt)</li>
 <li>Diese Verorderung von Konjunktionstermen ist dann die DNF</li>
 </ol>
+<hr />
 </div>
 <div id="wie-baue-ich-eine-aquivalente-knf" class="section level2">
 <h2>Wie baue ich eine äquivalente KNF?</h2>
@@ -320,8 +321,9 @@ $(document).ready(function () {
 <li>Negiere die gebaute DNF =&gt; <span class="math inline">\(\neg DNF(\neg \psi)\)</span></li>
 <li>Diese Negation ist die zu <span class="math inline">\(DNF(\psi)\)</span> äquivalente <span class="math inline">\(KNF\)</span></li>
 </ol>
-<div id="alternative" class="section level3">
-<h3>Alternative</h3>
+<hr />
+<div id="alternative" class="section level4">
+<h4>Alternative</h4>
 <p>Meiner Meinung nach ist es einfache, die KNF einer Formel <span class="math inline">\(\psi\)</span> zu bauen, wenn man sich</p>
 <ol style="list-style-type: decimal">
 <li>Die 0-er Zeilen anschaut.</li>
@@ -330,6 +332,7 @@ $(document).ready(function () {
 <li>Diese große Verundung von Disjunktionstermen ist dann die <span class="math inline">\(KNF(\psi)\)</span>.</li>
 </ol>
 <p>Probiert es aus und schaut mal, ob das gleiche rauskommt, wie wenn ihr anstelle dessen den obigen Prozess anwendet. <strong>BENUTZUNG MEINER TIPPS AUF EIGENE GEFAHR. KEINE GARANTIE FÜR RICHTIGKEIT. ÜBERZEUGT EUCH SELBST.</strong></p>
+<hr />
 </div>
 </div>
 <div id="losung-zu-aufgabe-3.3.-b" class="section level2">
@@ -351,12 +354,12 @@ $(document).ready(function () {
 <p>Wir betrachten eine beliebige Schicht <span class="math inline">\(i\)</span>. Das Bit <span class="math inline">\(X_{i,n}\)</span> geht verloren. Aus Aufgabe 3.2. b) iii) wissen wir, dass</p>
 <p><span class="math display">\[
 \left[ 
-\bigoplus_{j=1}^n X_{i,j}
+\bigoplus_{j=1}^n X_{i}
 \right] ^\mathcal{B} 
 = 
 \begin{cases}
-1 \quad \text{falls } \sum_{j=1}^n \mathcal{B}(X_{i,j}) \text{ ungerade} \\
-0 \quad \text{falls } \sum_{j=1}^n \mathcal{B}(X_{i,j}) \text{ gerade} \\
+1 \quad \text{falls } \sum_{i=1}^n \mathcal{B}(X_{i}) \text{ ungerade} \\
+0 \quad \text{falls } \sum_{i=1}^n \mathcal{B}(X_{i}) \text{ gerade} \\
 \end{cases}
 \]</span></p>
 <p>Falls also nach dem Ausfall von Bit <span class="math inline">\(X_{i,n}\)</span> gilt:</p>
