@@ -294,9 +294,101 @@ $(document).ready(function () {
 </div>
 
 
-<div id="hello-world" class="section level2">
-<h2>Hello world</h2>
-<p>Hello world.</p>
+<div id="wie-baue-ich-von-einer-wahrheitstafel-die-kanonische-dnf" class="section level2">
+<h2>Wie baue ich von einer Wahrheitstafel die kanonische DNF?</h2>
+<p>Ihr könnt die kanonische DNF bauen, indem ihr die folgenden Schritte befolgt:</p>
+<ol style="list-style-type: decimal">
+<li>Baut eine Wahrheitstafel für die gegebene Formel <span class="math inline">\(\psi\)</span></li>
+<li>Sucht die 1-er Zeilen aus der Wahrheitstafel raus</li>
+<li>Verunde die Literale, also die Elemente aus <span class="math inline">\(Var(\psi)\)</span>, zu einem einzigen Konjunktionsterm</li>
+<li>Verodere die Konjunktionsterme (d.h. du hast so viele Konjunktionsterme verordert wie es 1-er Zeilen gibt)</li>
+<li>Diese Verorderung von Konjunktionstermen ist dann die DNF</li>
+</ol>
+</div>
+<div id="wie-baue-ich-eine-aquivalente-knf" class="section level2">
+<h2>Wie baue ich eine äquivalente KNF?</h2>
+<p>Wir machen uns de Morgan’s Regeln zu nutze, und bemerken, dass gilt:</p>
+<p><span class="math display">\[
+\neg DNF \equiv KNF
+\]</span></p>
+<p>Aber wir negieren nicht einfach die kanonische DNF zur Formal <span class="math inline">\(\psi\)</span>, sondern wir bilden stattdessen eine kanonische DNF zur Formel <span class="math inline">\(\neg \psi\)</span></p>
+<p>Also geht z.B. wie folgt vor, um zur KNF zu gelangen:</p>
+<ol style="list-style-type: decimal">
+<li>Baue die Wahrheitstafel zu <span class="math inline">\(\psi\)</span></li>
+<li>Erweitere um die Spalte <span class="math inline">\(\neg \psi\)</span></li>
+<li>Bilde die kanonische DNF (siehe oben) zu <span class="math inline">\(\neg \psi\)</span></li>
+<li>Negiere die gebaute DNF =&gt; <span class="math inline">\(\neg DNF(\neg \psi)\)</span></li>
+<li>Diese Negation ist die zu <span class="math inline">\(DNF(\psi)\)</span> äquivalente <span class="math inline">\(KNF\)</span></li>
+</ol>
+<div id="alternative" class="section level3">
+<h3>Alternative</h3>
+<p>Meiner Meinung nach ist es einfache, die KNF einer Formel <span class="math inline">\(\psi\)</span> zu bauen, wenn man sich</p>
+<ol style="list-style-type: decimal">
+<li>Die 0-er Zeilen anschaut.</li>
+<li>Die Literale der 0-er Zeilen verodert.</li>
+<li>Die entstehenden Disjunktionsterme verundet (dann habt ihr so viele Disjunktionsterme wie es 0-er Zeilen gibt)</li>
+<li>Diese große Verundung von Disjunktionstermen ist dann die <span class="math inline">\(KNF(\psi)\)</span>.</li>
+</ol>
+<p>Probiert es aus und schaut mal, ob das gleiche rauskommt, wie wenn ihr anstelle dessen den obigen Prozess anwendet. <strong>BENUTZUNG MEINER TIPPS AUF EIGENE GEFAHR. KEINE GARANTIE FÜR RICHTIGKEIT. ÜBERZEUGT EUCH SELBST.</strong></p>
+</div>
+</div>
+<div id="losung-zu-aufgabe-3.3.-b" class="section level2">
+<h2>Lösung zu Aufgabe 3.3. b)</h2>
+<p><strong>Setting</strong>: Wir haben <span class="math inline">\(n\)</span> Schichten (Zeilen) und <span class="math inline">\(n+1\)</span> Speicher (Spalten). Wir betrachten das Szenario, bei dem ein Speicher (eine Spalte) wegefällt. Wir möchten wissen, ob wir die verlorengegangen Informationen wiederherstellen können. Das heißt, wir möchten für jede Schicht (Zeile), das in der Zeile verlorengegangene Bit rekonstruieren.</p>
+<p><strong>Vorraussetzungen</strong>: Wir wissen aus der Aufgabenstellung, dass das System vorher konsistent war, d.h. das folgende Formel <em>erfüllt</em> gewesen war:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;[ \kappa ]^\mathcal{B} = \left[ \bigwedge_{i=1}^n \left( \bigoplus_{j=1}^n X_{i,j} \leftrightarrow P_i \right) \right]^\mathcal{B} = 1 \\
+&amp; \Leftrightarrow
+\left[ \left( \bigoplus_{j=1}^n X_{i,j} \leftrightarrow P_i \right) \right]^\mathcal{B} = 1 \quad \text{für alle } i=1,...,n \\
+&amp; \Leftrightarrow
+\left[ \bigoplus_{j=1}^n X_{i,j} \right]^\mathcal{B} = \left[ P_i \right]^\mathcal{B} \quad \text{für alle } i=1,...,n
+\end{aligned}
+\]</span></p>
+<p><strong>Fallunterscheidung</strong>: In der Aufgabenstellung ist schon der Tipp gegeben, dass wir eine Fallunterscheidung zwischen <span class="math inline">\(j \leq n\)</span> und <span class="math inline">\(j = n+1\)</span> machen sollen. Also tun wir dies.</p>
+<p><strong>FALL 1</strong> (<span class="math inline">\(j=n+1\)</span>). Der Speicher <span class="math inline">\(M_j=M_{n+1}\)</span> fällt aus. Das entspricht der rechten Spalte in der Grafik. Wir wollen jetzt zeigen, dass wir für jede Schicht <span class="math inline">\(i=1,...,n\)</span> das in der jeweiligen Schicht verloren gegangene Bit wiederherstellen können.</p>
+<p>Wir beobachten, dass die rechten Spalte <span class="math inline">\(M_{n+1}\)</span> kein Paritätsbit enthält. Also kennen wir für jede Zeile die Belegung des Paritätsbits: <span class="math inline">\(\mathcal{B}(P_1), \mathcal{B}(P_2), \dots, \mathcal{B}(P_n)\)</span>.</p>
+<p>Wir betrachten eine beliebige Schicht <span class="math inline">\(i\)</span>. Das Bit <span class="math inline">\(X_{i,n}\)</span> geht verloren. Aus Aufgabe 3.2. b) iii) wissen wir, dass</p>
+<p><span class="math display">\[
+\left[ 
+\bigoplus_{j=1}^n X_{i,j}
+\right] ^\mathcal{B} 
+= 
+\begin{cases}
+1 \quad \text{falls } \sum_{j=1}^n \mathcal{B}(X_{i,j}) \text{ ungerade} \\
+0 \quad \text{falls } \sum_{j=1}^n \mathcal{B}(X_{i,j}) \text{ gerade} \\
+\end{cases}
+\]</span></p>
+<p>Falls also nach dem Ausfall von Bit <span class="math inline">\(X_{i,n}\)</span> gilt:</p>
+<p><span class="math display">\[
+\left[ 
+\bigoplus_{j=1}^{n-1} X_{i,j}
+\right] ^\mathcal{B} 
+\neq
+\mathcal{B}(P_i)
+\]</span></p>
+<p>so muss basierend auf der Annahme, dass das RAID-System vorher konsistent war, für das verlorene Bit gelten <span class="math inline">\(\mathcal{B}(X_{i,n})=1\)</span> (denn wechselt wieder die Belgung des ver-XOR-ten Terms).</p>
+<p>Andersrum, falls nach dem Ausfall von Bit <span class="math inline">\(X_{i,n}\)</span> gilt:</p>
+<p><span class="math display">\[
+\left[ 
+\bigoplus_{j=1}^{n-1} X_{i,j}
+\right] ^\mathcal{B} 
+=
+\mathcal{B}(P_i)
+\]</span></p>
+<p>so muss basierend auf der Annahme, dass das RAID-System vorher konsistent war, für das verlorene Bit gelten <span class="math inline">\(\mathcal{B}(X_{i,n})=0\)</span> (dann wechselt die Belgung des ver-XOR-ten nicht).</p>
+<p><strong>FALL 2</strong> (<span class="math inline">\(j\leq n\)</span>).</p>
+<p>Fall 2.1: Für Schicht <span class="math inline">\(i\in \{ 1,\dots, j-1,j+1, \dots, n \}\)</span> (also alles außer <span class="math inline">\(j\)</span>) geht das Paritätsbit nicht verloren. Also können wir analog zu FALL 1 argumentieren.</p>
+<p>Fall 2.2: Falls Schicht <span class="math inline">\(i=j\)</span>, so geht das Paritätsbit <span class="math inline">\(P_i\)</span> verloren. Da wir wissen, dass das RAID-System vorher konsistent war, muss aber gelten</p>
+<p><span class="math display">\[
+\mathcal{B}(P_i)
+=
+\begin{cases}
+1 \quad \text{ falls } \sum \mathcal{B}(X_{i,j}) \text{ ungerade} \\
+0 \quad \text{ falls } \sum \mathcal{B}(X_{i,j}) \text{ gerade}
+\end{cases}
+\]</span></p>
+<p>denn dann ist wieder <span class="math inline">\(\left[ \kappa \right] ^\mathcal{B}=1\)</span> erfüllt.</p>
 </div>
 
 
