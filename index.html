@@ -324,10 +324,10 @@ $(document).ready(function () {
 <hr />
 <div id="alternative" class="section level4">
 <h4>Alternative</h4>
-<p>Meiner Meinung nach ist es einfache, die KNF einer Formel <span class="math inline">\(\psi\)</span> zu bauen, wenn man sich</p>
+<p>Meiner Meinung nach ist es einfacher, die KNF einer Formel <span class="math inline">\(\psi\)</span> zu bauen, wenn man sich</p>
 <ol style="list-style-type: decimal">
 <li>Die 0-er Zeilen anschaut.</li>
-<li>Die Literale der 0-er Zeilen verodert.</li>
+<li>Die <strong>negierten</strong> Literale der 0-er Zeilen verodert. (Also wenn z.B. Variablen A und B in einer 0-Zeile beide mit 0 belegt sind dann lautet der Konjunktionsterm <span class="math inline">\(\neg A \wedge \neg B\)</span>)</li>
 <li>Die entstehenden Disjunktionsterme verundet (dann habt ihr so viele Disjunktionsterme wie es 0-er Zeilen gibt)</li>
 <li>Diese große Verundung von Disjunktionstermen ist dann die <span class="math inline">\(KNF(\psi)\)</span>.</li>
 </ol>
