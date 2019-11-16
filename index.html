@@ -308,9 +308,9 @@ $(document).ready(function () {
 </div>
 <div id="wie-baue-ich-eine-aquivalente-knf" class="section level2">
 <h2>Wie baue ich eine äquivalente KNF?</h2>
-<p>Wir machen uns de Morgan’s Regeln zu nutze, und bemerken, dass gilt:</p>
+<p>Wir machen uns de Morgan’s Regeln zu nutze, und bemerken, dass für eine Formel <span class="math inline">\(\phi\)</span> gilt:</p>
 <p><span class="math display">\[
-\neg DNF \equiv KNF
+\neg DNF(\neg \phi) \equiv KNF(\phi)
 \]</span></p>
 <p>Aber wir negieren nicht einfach die kanonische DNF zur Formal <span class="math inline">\(\psi\)</span>, sondern wir bilden stattdessen eine kanonische DNF zur Formel <span class="math inline">\(\neg \psi\)</span></p>
 <p>Also geht z.B. wie folgt vor, um zur KNF zu gelangen:</p>
