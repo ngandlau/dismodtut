@@ -16,7 +16,7 @@ title:  "Vollständige Induktion: Survival Guide"
 
 ## Beweis durch vollständige Induktion
 
-Im Tutorium habe ich erwähnt, wie man die Induktionsannahme und den Induktionsanfang korrekt wählt. Das ganze habe ich nochmal etwas ausführlicher (und hoffentlich verständlicher) anhand eines Beispiels zusammengefasst.
+Im Tutorium habe ich erwähnt, wie man die Induktionsannahme und den Induktionsanfang korrekt wählt. Das Ganze habe ich nochmal etwas ausführlicher (und hoffentlich verständlicher) anhand eines Beispiels zusammengefasst.
 
 ## Beispiel
 
