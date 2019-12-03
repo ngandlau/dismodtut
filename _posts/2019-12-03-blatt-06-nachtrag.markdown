@@ -18,7 +18,7 @@ date:   2019-12-03 11:36:36 +0100
 
 Anbei meine handschriftlichen Lösungen zu solchen Aufgaben, die im Tutorium eventuell etwas problematisch waren, oder nicht ausreichend gut rübergekommen sind.
 
-Note: In Blau bzw. Grün habe ich ein paar Bemerkungen/Gedankennotizen hinzugefügt. Vielleicht helfen die beim Verständnis.
+**Note**: In Blau bzw. Grün habe ich ein paar Bemerkungen/Gedankennotizen hinzugefügt. Vielleicht helfen die beim Verständnis.
 
 ## Aufgabe 6.3 (Kachelung)
 
