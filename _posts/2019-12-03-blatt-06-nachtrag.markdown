@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Blatt 06 - Nachtrag"
-date:   2019-12-03 11:36:36 +0100
 ---
 
 <script type="text/x-mathjax-config">
