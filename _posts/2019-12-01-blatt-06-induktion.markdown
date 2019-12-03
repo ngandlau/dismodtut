@@ -14,30 +14,10 @@ date:   2019-11-30 16:38:36 +0100
     </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-# Tipps
 
 ## Tipp 1 
 
-Wenn in einer Rekursionsgleichung $R_n$ der $n$'te Term abhängig ist von mehreren vergangen Werten, z.B. von $R_{n-1}, R_{n-4}$ wie in 
-
-$$R_n = 5 + R_{n-1} - R_{n-4}$$
-
-dann muss man in diesem (!) Fall 
-
-* $R_{n-1}, R_{n-4}$ in der _Induktionsvoraussetzung_ erwähnen. Also irgendwas soll für $R_{n-1}, R_{n-4}$ gelten.
-* Da wir von $R_{n-1}, R_{n-4}$ auf $R_n$ schließen, ist der Induktionsschritt sowas wie $(k, k-3) \rightarrow k+1$.
-
-**Beispiel**:
-
-Für ein Beispiel siehe den Induktionsbeweis von Blatt 6 Aufgabe 1 ii):
-
-Dort ergibt sich die Anzahl Blätter durch 
- 
-$$B_n = 2B_{n-1} + B_{n-2}$$
- 
-In der _Induktionsvoraussetzung_ nehmen wir also an, dass für irgendein *beliebiges* $k\in \mathbb{N}$ mit $k\geq 3$  der zu zeigende Term $T_n$ *und* $T_{n-1}$ gilt (Note: größer-gleich 3, denn $k=1$ ist das kleinstmögliche $k$ in dieser Aufgabe, sodass es z.B. für $k=2$ kein $B_{2-2}=B_{0}$ gibt)
-
-Der Induktionsschritt ist dann $(k, k-1)\rightarrow k+1$.
+Siehe Post "Vollständige Induktion: Survival Guide".
 
 ## Tipp 2
 
@@ -68,7 +48,7 @@ Im Induktionsverweis verwenden wir am Besten folgende 3 Schritte:
 Um zu zeigen, dass für einen Ausdruck eine bestimmte geschlossene Form $T_n$ gilt, sollte der Induktionsschritt ungefähr diesem Muster folgen:
 
 $$
-T_{k+1}=\text{Hier rekursiven Ausdruck einsetzen}=...\overset{IV}{=} ... = \text{zu zeigende geschlossene Form}
+T_{n+1}=\text{Hier rekursiven Ausdruck einsetzen}=...\overset{IV}{=} ... = \text{zu zeigende geschlossene Form}
 $$
 
 
